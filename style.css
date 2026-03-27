@@ -1,0 +1,215 @@
+/* Paleta de Cores e Reset */
+:root {
+    --branco: #ffffff;
+    --fundo-cinza: #f9f9f9;
+    --fogo-vermelho: #d90429;
+    --fogo-laranja: #ff7b00;
+    --fogo-amarelo: #ffea00;
+    --texto-escuro: #2b2b2b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--branco);
+    color: var(--texto-escuro);
+}
+
+/* Cabeçalho e Menu */
+header {
+    background: linear-gradient(90deg, var(--fogo-vermelho), var(--fogo-laranja), var(--fogo-amarelo));
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--branco);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.escudo-header {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    background-color: var(--branco);
+    border-radius: 5px;
+    padding: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--branco);
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+nav ul li a:hover {
+    color: #ffe6a0;
+}
+
+/* Seção Principal (Hero) */
+.hero {
+    margin-top: 80px;
+    padding: 4rem 5%;
+    text-align: center;
+    background-color: var(--branco);
+}
+
+/* --- NOVA REGRA: Estilo do Escudo Grande no Hero --- */
+.hero-escudo {
+    width: 300px; /* Tamanho maior para o hero */
+    height: 300px;
+    object-fit: contain;
+    margin-bottom: 2rem; /* Espaço entre o escudo e o título */
+    /* Opcional: Adicionar um leve brilho para o tema de fênix */
+    filter: drop-shadow(0 0 10px rgba(217, 4, 41, 0.4));
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--fogo-vermelho);
+    margin-bottom: 1rem;
+    margin-top: 0; /* Garante que não haja espaço extra vindo do título */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Seção da Equipe */
+.equipe-section {
+    padding: 4rem 5%;
+    background-color: var(--fundo-cinza);
+}
+
+.equipe-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--fogo-laranja);
+}
+
+.grid-equipe {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Boxes dos Integrantes */
+.card-integrante {
+    background-color: var(--branco);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-bottom: 5px solid var(--fogo-vermelho);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-integrante::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--fogo-vermelho), var(--fogo-laranja));
+}
+
+.card-integrante:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(217, 4, 41, 0.15);
+}
+
+.foto-integrante {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+    border: 4px solid var(--fogo-laranja);
+    box-shadow: 0 4px 10px rgba(255, 123, 0, 0.3);
+    background-color: #eee;
+}
+
+.card-integrante h3 {
+    font-size: 1.5rem;
+    color: var(--fogo-vermelho);
+    margin-bottom: 0.5rem;
+}
+
+.funcao {
+    font-weight: bold;
+    color: #777;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.info {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.info p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.info span {
+    font-weight: bold;
+    color: var(--fogo-laranja);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--texto-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
